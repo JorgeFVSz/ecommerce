@@ -1,11 +1,17 @@
-package com.example.ecommerce.models;
+package com.example.ecommerce.model;
+
+import jakarta.persistence.*;
 
 import java.util.List;
 
+@Entity
 public class Compra {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String cpf;
+    @ManyToMany
     private List<Produto> produtos;
 
     public Compra() {

@@ -1,17 +1,24 @@
-package com.example.ecommerce.models;
+package com.example.ecommerce.model;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Cliente {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String nome;
+    @Column(nullable = false, unique = true)
     private String cpf;
+    @Column(nullable = false, unique = true)
     private String email;
 
     public Cliente() {
     }
 
-    public Cliente(Long id, String nome, String cpf, String email) {
-        this.id = id;
+    public Cliente(String nome, String cpf, String email) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
