@@ -1,34 +1,19 @@
-package com.example.ecommerce.model;
+package com.example.ecommerce.dto;
 
-import jakarta.persistence.*;
+import com.example.ecommerce.model.Produto;
 
 import java.util.List;
 
-@Entity
-public class Compra {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class CompraRequestDTO {
     private String cpf;
-    @ManyToMany
     private List<Produto> produtos;
 
-    public Compra() {
+    public CompraRequestDTO() {
     }
 
-    public Compra(Long id, String cpf, List<Produto> produtos) {
-        this.id = id;
+    public CompraRequestDTO(String cpf, List<Produto> produtos) {
         this.cpf = cpf;
         this.produtos = produtos;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getCpf() {

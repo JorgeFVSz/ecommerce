@@ -1,28 +1,16 @@
-package com.example.ecommerce.model;
+package com.example.ecommerce.dto;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Min;
-
-@Entity
-public class Produto {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ProdutoResponseDTO {
     private Long id;
-
-    @Column(unique = true)
     private String nome;
-
-    @Min(value = 1)
     private Double preco;
-
-    @Min(value = 0)
     private int quantidade;
 
-    public Produto() {
+    public ProdutoResponseDTO() {
     }
 
-    public Produto(String nome, Double preco, int quantidade) {
+    public ProdutoResponseDTO(Long id, String nome, Double preco, int quantidade) {
+        this.id = id;
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;

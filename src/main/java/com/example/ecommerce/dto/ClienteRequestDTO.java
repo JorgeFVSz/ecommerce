@@ -1,9 +1,14 @@
 package com.example.ecommerce.dto;
 
+import jakarta.validation.constraints.Email;
+import org.hibernate.validator.constraints.br.CPF;
+
 public class ClienteRequestDTO {
 
     private String nome;
+    @CPF(message = "CPF inválido")
     private String cpf;
+    @Email(message = "E-mail inválido")
     private String email;
 
     public ClienteRequestDTO() {

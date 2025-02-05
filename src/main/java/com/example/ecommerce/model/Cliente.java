@@ -1,6 +1,8 @@
 package com.example.ecommerce.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import org.hibernate.validator.constraints.br.CPF;
 
 @Entity
 public class Cliente {
@@ -8,11 +10,12 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
     private String nome;
-    @Column(nullable = false, unique = true)
+    @CPF
+    @Column(unique = true)
     private String cpf;
-    @Column(nullable = false, unique = true)
+    @Email
+    @Column(unique = true)
     private String email;
 
     public Cliente() {
