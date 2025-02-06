@@ -7,7 +7,7 @@ dados.
 - Java 17+
 - Spring Boot
 - Spring Data JPA
-- H2 Database (ou outro banco de dados configurado)
+- H2 Database
 - Maven
 
 ## **Estrutura do Projeto**
